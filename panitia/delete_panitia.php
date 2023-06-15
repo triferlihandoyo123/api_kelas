@@ -4,7 +4,7 @@ include "../connection.php";
 $mhsNpm = $_POST['mhsNpm'];
 
 $sql = "
-        DELETE FROM mahasiswa 
+        DELETE FROM panitia 
         WHERE
         mhsNpm = '$mhsNpm'
         ";

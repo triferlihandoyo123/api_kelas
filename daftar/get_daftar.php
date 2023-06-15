@@ -1,19 +1,19 @@
 <?php 
     include "../connection.php";
 
-    $sql = "SELECT * FROM mahasiswa";
+    $sql = "SELECT * FROM daftar_lomba";
 
     $result = $connect->query($sql);
     
     if($result->num_rows > 0){
-       $mahasiswa = array();
+       $panitia = array();
        while($row = $result->fetch_assoc()){
-        $mahasiswa[] = $row;
+        $panitia[] = $row;
        }
 
        echo json_encode(array(
         "success"=> true,
-        "mahasiswa"=>$mahasiswa,
+        "panitia"=>$panitia,
        ));
     }else{
     echo json_encode(array(

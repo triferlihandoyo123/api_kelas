@@ -6,8 +6,9 @@
     $mhsAlamat       = $_POST['mhsAlamat'];
     $mhsFakultas       = $_POST['mhsFakultas'];
     $MhsProdi       = $_POST['MhsProdi'];
+    $Pj_lomba       = $_POST['Pj_lomba'];
     
-    $sql1 = "SELECT * FROM mahasiswa WHERE mhsNpm = '$mhsNpm'";
+    $sql1 = "SELECT * FROM panitia WHERE mhsNpm = '$mhsNpm'";
     $check = $connect->query($sql1);
     $reason = "";
     $success = true;
@@ -17,19 +18,20 @@
         $reason = "npm sudah ada";
     }else{
         $sql2 = "
-        INSERT INTO mahasiswa SET 
+        INSERT INTO panitia SET 
             mhsNpm = '$mhsNpm',
             mhsNama = '$mhsNama',
             mhsAlamat = '$mhsAlamat',
             mhsFakultas = '$mhsFakultas',
-            MhsProdi = '$MhsProdi'
+            MhsProdi = '$MhsProdi',
+	    Pj_lomba = '$Pj_lomba'
         ";
         
         $result = $connect->query($sql2);
 
         if(!$result){
             $success = false;
-            $reason = "Gagal add Mahasiswa";
+            $reason = "Gagal add Panitia";
         }
     }
 

@@ -6,15 +6,17 @@ include "../connection.php";
     $mhsAlamat       = $_POST['mhsAlamat'];
     $mhsFakultas       = $_POST['mhsFakultas'];
     $MhsProdi       = $_POST['MhsProdi'];
+    $Pj_lomba       = $_POST['Pj_lomba'];
 
 
 $sql = "
-        UPDATE mahasiswa 
+        UPDATE panitia
         SET 
         mhsNama = '$mhsNama'
         ,mhsAlamat = '$mhsAlamat'
         ,mhsFakultas = '$mhsFakultas'
-        ,MhsProdi = '$MhsProdi'
+        ,MhsProdi = '$MhsProdi',
+        Pj_lomba = '$Pj_lomba'
         WHERE
         mhsNpm = '$mhsNpm'
         ";
